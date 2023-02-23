@@ -1,5 +1,5 @@
 import React from "react";
-import { File } from "./File";
+import { Welcome } from "./Welcome";
 
 export class InteractiveWelcome extends React.Component{
     
@@ -29,7 +29,7 @@ export class InteractiveWelcome extends React.Component{
     render(){
         return(
             <div>
-            <File name={this.state.name} />
+            <Welcome name={this.state.name} />
             <input type="text" onChange={this.handleInputChange} value={this.state.name}/>
             </div>
         )

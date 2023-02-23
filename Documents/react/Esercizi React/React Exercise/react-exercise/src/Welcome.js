@@ -1,7 +1,7 @@
 import React from "react";
 import { Age } from "./Age";
 
-export class File extends React.Component {
+export class Welcome extends React.Component {
   constructor(props) {
     super(props);
     
