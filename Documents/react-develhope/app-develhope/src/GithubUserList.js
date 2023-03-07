@@ -1,0 +1,31 @@
+import { Link, Outlet } from 'react-router-dom';
+import { useState } from 'react';
+
+export function GithubUserList() {
+  const [username, setUsername] = useState('');
+  const [usernames, setUsernames] = useState([]);
+
+  const handleAddUser =()=> {
+    setUsernames([...usernames, username]);
+    setUsername('');
+  }
+
+  return (
+    <div>
+      <div>
+        <label>Put in here your Github Username:</label>
+        <br />
+        <input value={username} onChange={(e) => setUsername(e.target.value)} />
+        <button onClick={handleAddUser}>Add User</button>
+      </div>
+      <ul>
+        {usernames.map((username) => (
+          <li key={username}>
+            <Link to={`${username}`}>{username}</Link>
+          </li>
+        ))}
+      </ul>
+      <Outlet />
+    </div>
+  );
+}
